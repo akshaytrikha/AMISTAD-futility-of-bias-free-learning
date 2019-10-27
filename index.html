@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Futility of Bias-Free Learning and Search - AMISTAD Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta id="meta" name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!-- Google Analytics setup -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-83215098-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body style="text-align: center;">
+
+<!-- AMISTAD x NSF x HMC -->
+<div class="logo-row">
+  <div class="logo-column">
+    <img class="amistad-logo" src="./assets/amistad-logo.png" />
+    <h2 class="x1">x</h2>
+  </div>
+  <div class="logo-column" style="width:10%">
+    <img class="nsf-logo" src="./assets/nsf-logo.png" />
+    <h2 class="x2">x</h2>
+  </div>
+  <div class="logo-column">
+    <img class="hmc-logo" src="./assets/hmc-logo.png" />
+  </div>
+</div>
+
+<h1 class="title">The Futility of Bias-Free Learning and Search</h1>
+<h2 style="position: absolute; left: 675px; top: 315px">2019</h2>
+    <div style="margin: auto; margin-top: 25%" class="main-page-box">
+      <h3 style="text-align: left;">Overview:</h3>
+      <p style="text-align: left;">
+        Imagine you are on a routine grocery shopping trip and plan to buy some bananas. You know that the store carries both good and bad bananas which you must search through. There are multiple ways you can go about your search. <br><br>
+
+        You could: <br>
+        1) randomly pick any ten bananas available on the shelf (unbiased search) <br>
+        2) Only pick those bananas that are neither underripe nor overripe (biased search) <br><br>
+
+        We mathematically prove that for a machine, the proportion of good bananas retrieved in its biased search is greater than the same proportion in an unbiased search; it was given prior knowledge about tasty bananas. <br><br>
+
+        We further prove that an algorothm cannot be simulatenously biased towards all types of bananas (underripe, overripe, perfect).
+      </p>
+
+      <h3 style="text-align: left;">Key Definitions:</h3>
+      <h4>Bias</h4>
+      <p style="text-align: left;">
+
+
+        We define bias to be a measure of how different the performance of one distrbution is to that of a uniform distribution. <br><br>
+
+        Given a: <br>
+          &bull; k-sized fixed target t <br>
+          &bull; distribution over information resources D <br>
+          &bull; search algorithm PF <br>
+          &bull; performance of uniform random sampling p <br>
+      </p>
+
+
+
+
+<!-- Old Code -->
+
+<!-- <div class="row">
+ <div class="column">
+    <div class="card">
+      <a href="https://www.linkedin.com/in/julius-lauw-882652139/" target="_blank"><img src="./images/julius.jpg" alt="Julius Lauw" style="width:100%"></a>
+      <div class="container">
+        <h2>Julius Lauw</h2>
+        <p>Overfitting and Underfitting</p>
+        <p>Bright student with a drive to ask all the right questions.</p>
+        <p>&#106;&#117;&#108;&#097;&#117;&#119;&#064;&#103;&#046;&#104;&#109;&#099;&#046;&#101;&#100;&#117;</p>
+        <p><a href="https://www.linkedin.com/in/julius-lauw-882652139/" target="_blank"><button class="button">Visit LinkedIn</button></a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+        <a href="https://www.linkedin.com/in/tyler-sam-503763142/" target="_blank"><img src="./images/tyler.jpg" alt="Tyler Sam" style="width:100%"></a>
+      <div class="container">
+        <h2>Tyler Sam</h2>
+        <p>ML as Search</p>
+        <p>A self-motivated learner with precise reasoning and formal acuity.</p>
+        <p>&#116;&#115;&#097;&#109;&#064;&#103;&#046;&#104;&#109;&#099;&#046;&#101;&#100;&#117;</p>
+        <p><a href="https://www.linkedin.com/in/tyler-sam-503763142/" target="_blank"><button class="button">Visit LinkedIn</button></a></p>
+      </div>
+    </div>
+  </div>
+
+ <div class="column">
+    <div class="card">
+      <a href="https://www.linkedin.com/in/dave-makhervaks-28b395134/" target="_blank"><img src="./images/dave-2.jpg" alt="Dave Makhervaks" style="width:100%"></a>
+      <div class="container">
+        <h2>Dave Makhervaks</h2>
+        <p>ML as Search</p>
+        <p>Quiet strength, with a confidence to strive and a hunger to learn.</p>
+        <p>&#100;&#109;&#097;&#107;&#104;&#101;&#114;&#118;&#097;&#107;&#115;&#064;&#103;&#046;&#104;&#109;&#099;&#046;&#101;&#100;&#117;</p>
+        <p><a href="https://www.linkedin.com/in/dave-makhervaks-28b395134/" target="_blank"><button class="button">Visit LinkedIn</button></a></p>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="row">
+
+  <div class="column">
+    <div class="card">
+      <a href="https://www.linkedin.com/in/akshay-trikha" target="_blank"><img src="./images/akshay.jpg" alt="Akshay Trikha" style="width:100%"></a>
+      <div class="container">
+        <h2>Akshay Trikha</h2>
+        <p>Overfitting and Underfitting</p>
+        <p>A sense of wonder combined with an excitement for learning.</p>
+        <p>&#097;&#116;&#114;&#105;&#107;&#104;&#097;&#064;&#104;&#109;&#099;&#046;&#101;&#100;&#117;</p>
+        <p><a href="https://www.linkedin.com/in/akshay-trikha" target="_blank"><button class="button">Visit LinkedIn</button></a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+        <a href="https://db7894.github.io/" target="_blank"><img src="./images/daniel-cropped.jpg" alt="Daniel Bashir" style="width:100%"></a>
+      <div class="container">
+        <h2>Daniel Bashir</h2>
+        <p>Overfitting and Underfitting</p>
+        <p>Mudd senior with serious ML skills and deep understanding.</p>
+        <p>&#100;&#098;&#097;&#115;&#104;&#105;&#114;&#064;&#104;&#109;&#099;&#046;&#101;&#100;&#117;</p>
+        <p><a href="https://db7894.github.io/" target="_blank"><button class="button">Visit Website</button></a></p>
+      </div>
+    </div>
+  </div>
+
+    <div class="column">
+    <div class="card">
+      <a href="https://www.linkedin.com/in/soneshmones/" target="_blank"><img src="./images/sonia.jpg" alt="Sonia Sehra" style="width:100%"></a>
+      <div class="container">
+        <h2>Sonia Sehra</h2>
+        <p>Overfitting and Underfitting</p>
+        <p>Intrigued by the big questions and unafraid to search after their answers.</p>
+        <p>&#115;&#115;&#101;&#104;&#114;&#097;&#064;&#103;&#046;&#104;&#109;&#099;&#046;&#101;&#100;&#117;&#032;</p>
+        <p><a href="https://www.linkedin.com/in/soneshmones/" target="_blank"><button class="button">Visit LinkedIn</button></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <a href="https://ruijieyew.github.io/" target="_blank"><img src="./images/rui-jie.jpg" alt="Rui-Jie Yew" style="width:100%"></a>
+      <div class="container">
+        <h2>Rui-Jie Yew</h2>
+        <p>DFA Learnability</p>
+        <p>Wisdom demonstrated through analytical strength and interpersonal empathy.</p>
+        <p>&#114;&#117;&#105;&#106;&#105;&#101;&#121;&#101;&#119;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</p>
+        <p><a href="https://ruijieyew.github.io/" target="_blank"><button class="button">Visit Website</button></a></p>
+      </div>
+    </div>
+  </div>
+
+    <div class="column">
+    <div class="card">
+        <a href="https://www.linkedin.com/in/jonathan-hayase-5ab849128/" target="_blank"><img src="./images/jonathan.jpg" alt="Jonathan Hayase" style="width:100%"></a>
+      <div class="container">
+        <h2>Jonathan Hayase</h2>
+        <p>DFA Learnability</p>
+        <p>Rumor has it that Jon is pretty smart. That rumor is true.</p>
+        <p>&#106;&#104;&#097;&#121;&#097;&#115;&#101;&#064;&#103;&#046;&#104;&#109;&#099;&#046;&#101;&#100;&#117;</p>
+        <p><a href="https://www.linkedin.com/in/jonathan-hayase-5ab849128/" target="_blank"><button class="button">Visit LinkedIn</button></a></p>
+      </div>
+    </div>
+  </div>
+
+    <div class="column">
+    <div class="card">
+      <img src="./images/kyle.jpg" alt="Kyle Rong" style="width:100%">
+      <div class="container">
+        <h2>Kyle Rong</h2>
+        <p>Team Lead - DFA Learnability</p>
+        <p>Advanced beyond his years, the precocious Rong is usually right.</p>
+        <p>&#107;&#114;&#111;&#110;&#103;&#064;&#103;&#046;&#104;&#109;&#099;&#046;&#101;&#100;&#117;</p>
+        <p><a href="mailto:&#107;&#114;&#111;&#110;&#103;&#064;&#103;&#046;&#104;&#109;&#099;&#046;&#101;&#100;&#117;"><button class="button">Contact</button></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <a href="https://www.linkedin.com/in/julia-vendemiatti-645a5613a/" target="_blank"><img src="./images/AMISTAD/julia.jpg" alt="Julia Vendemiatti" style="width:100%"></a>
+      <div class="container">
+        <h2>Julia Vendemiatti</h2>
+        <p>Overfitting and Underfitting</p>
+        <p>Julia's brain is just different. Don't expect to keep up with her.</p>
+        <p>&#106;&#118;&#101;&#110;&#100;&#101;&#109;&#105;&#097;&#116;&#116;&#105;&#064;&#103;&#046;&#104;&#109;&#099;&#046;&#101;&#100;&#117;</p>
+        <p><a href="https://www.linkedin.com/in/julia-vendemiatti-645a5613a/" target="_blank"><button class="button">Visit LinkedIn</button></a></p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="column">
+    <div class="card">
+      <img src="./images/AMISTAD/prof-george.png" alt="Prof. George" style="width:100%">
+      <div class="container">
+        <h2>George D. Monta&ntilde;ez</h2>
+        <p>Lab Director</p>
+        <p>Just a curious mind swimming in a sea of peculiar observations.</p>
+        <p>&#103;&#109;&#111;&#110;&#116;&#97;&#110;&#101;&#122;&#64;&#103;&#46;&#104;&#109;&#99;&#46;&#101;&#100;&#117;</p>
+        <p><a href="mailto:&#103;&#109;&#111;&#110;&#116;&#97;&#110;&#101;&#122;&#64;&#103;&#46;&#104;&#109;&#99;&#46;&#101;&#100;&#117;"><button class="button">Contact</button></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="bottom-nav">
+      <a href="index.html">Home</a> <a href="publications.html">Publications</a> <a href="https://www.linkedin.com/in/georgemontanez">LinkedIn</a> <a href="https://www.dropbox.com/s/emtdx2qmjxz14ha/cv.pdf?dl=0">CV</a> <a href="https://github.com/george-montanez">GitHub</a>
+   </div>
+  </div> -->
+
+
+</body></html>
