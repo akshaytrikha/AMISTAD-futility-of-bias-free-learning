@@ -124,7 +124,13 @@ body {
 
     .headshot {
       padding: 3%;
-      width: 291px;;
+      width: 291px;
+    }
+
+    .target-divergence-diagram {
+      width: 300px;
+      padding-left: 17.3%;
+      padding-right: 17.3%;
     }
 
     /* X's between logos */
