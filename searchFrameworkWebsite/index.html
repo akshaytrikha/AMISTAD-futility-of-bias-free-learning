@@ -35,10 +35,10 @@
     <h3>Overview</h3>
     <p>
       <!-- Using a framework that casts most machine learning problems as search problems, we quantified bias towards a "target" (for example, a model that approximates a "true distribution" of variables). The "bias" quantity we defined basically captures how much more likely an algorithm is to find an acceptable model than picking a model at random. Then, under this framework, we proved that no algorithm can have bias towards any given target set. Additionally, we proved that bias is a conserved quantity for algorithms. Thus, to the degree that an algorithm is more biased towards a particular target, is to the degree that it is biased against other targets. This also serves as a generalization of the "No Free Lunch" Theorems, because we show that no algorithm can be favorably biased towards many distinct targets simultaneously. Thus bias encodes trade-offs: the more bias, the better we can perform for a fixed problem, but the worse we perform on all other problems. -->
-      A search problem is represented as a tuple \( (\Omega, T, F) \): <br>
-        &bull; \( \Omega \): finite search space<br>
-        &bull; \( T \): target subset of elements in search space<br>
-        &bull; \( F \): external information resrouce<br><br>
+      A search problem is represented as a tuple \((\Omega, T, F)\): <br>
+        &bull; \(\Omega\): finite search space<br>
+        &bull; \(T\): target subset of elements in search space<br>
+        &bull; \(F\): external information resrouce<br><br>
 
       <span style="font-weight:400;">Note:</span> The external information resource is a purposefully general concept that helps a leanring algorithm make guesses about the search space. <br>
       In more technical words, it's a binary string that provides initialization information for the search and evaluates points in \( \Omega \), acting as an oracle that guides the search process.
@@ -51,8 +51,8 @@
           <img src="./images/jellyfish-2.png" alt="Target Divergence 1" class="jellyfish-diagram">
           <p style="text-align:center; margin-top: 1%;">
             <span style="font-weight:400;">Figure:</span>
-            As a black-box optimization algorithm samples from \( \Omega \), it produces an associated probability distribution \( P_i \) based on the search history.
-            When a sample \( \omega_k \) corresponding to location \( k \) in \( \Omega \) is evaluated using the external information resource \( F \), the tuple (\( \omega_k \), \( F(\omega_k) \)) is added to the search history.
+            As a black-box optimization algorithm samples from \(\Omega\), it produces an associated probability distribution \(P_i\) based on the search history.
+            When a sample \( \omega_k \) corresponding to location \(k\) in \(\Omega\) is evaluated using the external information resource \(F\), the tuple (\(\omega_k\), \(F(\omega_k)\)) is added to the search history.
           </p>
         </div>
       </div>
@@ -63,8 +63,29 @@
     </p>
     <h3>Measuring Performance</h3>
     <p>
+      <span style="font-weight:400;">Big Picture: </span>We need a way to fairly measure the performance of an optimizaiton algorithm. <br><br>
 
-      $$ q(T,F) = \mathbb{E}_{\tilde{P}, H} \Bigg[ \frac{1}{|\tilde{P}|} \sum_{i=1}^{|\tilde{P}|} P_i(\omega \in T) \Bigg| F \Bigg] $$
+      The total probability of success for an algorithm is affected by the number of sampling steps, which are in turn affected by the particular algorithm used and the particular run of that algorithm.
+      \(q(T,F)\) provides a normalized measure of performance compared to an algorithm's total probability of success<br><br>
+
+      Given a: <br>
+        &bull; target \(T\) <br>
+        &bull; information resource \(F\) <br>
+        &bull; sequence of probability distributions over the search space \(\tilde{P}\)<br>
+        &bull; distribution at timestep i \(P_i\)<br>
+        &bull; search history \(H\) <br>
+        &bull; sample from target \(\omega\)
+
+
+      $$q(T,F) = \mathbb{E}_{\tilde{P}, H} \Bigg[ \frac{1}{|\tilde{P}|} \sum_{i=1}^{|\tilde{P}|} P_i(\omega \in T) \Bigg| F \Bigg]$$
+
+      The number of queries during a search is equal to the length of the probability distribution sequence,  \(|\tilde{P}|\).
+      The outer expectation accounts (\(\mathbb{E}_{\bar{P},H} \))for stochastic differences in multiple runs of the algorithm,
+      whereas the inner quantity is equivalent to the expected probability of success for a uniformly sampled time step of a given run. <br><br>
+
+      Furthermore, the per-query probability of success naturally accounts for sampling procedures that may involve repeatedly sampling the same points in the search space,
+      as is the case with <a href="">genetic algorithms</a>,
+      allowing this measure to deftly handle search algorithms that manage trade-offs between exploration and exploitation. <br><br>
     </p>
   </div>
   <div class="bottom-nav">
