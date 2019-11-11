@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Futility of Bias-Free Learning and Search - AMISTAD Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta id="meta" name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!-- Google Analytics setup -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-83215098-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- MathJax Setup -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+<!-- AMISTAD x NSF x HMC -->
+<div class="title">
+  <div class="logo-column" style="width:100%;">
+    <img class="amistad-logo" src="./images/amistad-logo.png" />
+</div>
+
+<div>
+  <h1>The Search Framework</h1>
+  <div style="margin: auto;" class="main-page-box">
+    <h3>Overview:</h3>
+    <p>
+      <!-- Using a framework that casts most machine learning problems as search problems, we quantified bias towards a "target" (for example, a model that approximates a "true distribution" of variables). The "bias" quantity we defined basically captures how much more likely an algorithm is to find an acceptable model than picking a model at random. Then, under this framework, we proved that no algorithm can have bias towards any given target set. Additionally, we proved that bias is a conserved quantity for algorithms. Thus, to the degree that an algorithm is more biased towards a particular target, is to the degree that it is biased against other targets. This also serves as a generalization of the "No Free Lunch" Theorems, because we show that no algorithm can be favorably biased towards many distinct targets simultaneously. Thus bias encodes trade-offs: the more bias, the better we can perform for a fixed problem, but the worse we perform on all other problems. -->
+      A search problem is represented as a tuple \( (\Omega, T, F) \): <br>
+        &bull; \( \Omega \): finite search space<br>
+        &bull; \( T \): target subset of elements in search space<br>
+        &bull; \( F \): external information resrouce<br><br>
+
+      Given a search problem, a history of elements already examined, and information resource evaluations, an algorithmic search is a process that decides how to query elements of \( \Omega \)
+    <div>
+      <div style="margin-bottom: 0%;">
+        <div style="display:inline-block;">
+          <img src="./images/jellyfish-2.png" alt="Target Divergence 1" class="jellyfish-diagram">
+          <p style="text-align:center; margin-top: 1%;">
+            <span style="font-weight:400;">Figure:</span>
+            As a black-box optimization algorithm samples from \( \Omega \), it produces an associated probability distribution \( P_i \) based on the search history.
+            When a sample \( \omega_k \) corresponding to location \( k \) in \( \Omega \) is evaluated using the external information resource \( F \), the tuple (\( \omega_k \), \( F(\omega_k) \)) is added to the search history.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-nav">
+    <a href="index.html">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="https://www.linkedin.com/in/georgemontanez">LinkedIn</a>
+    <a href="https://www.dropbox.com/s/emtdx2qmjxz14ha/cv.pdf?dl=0">CV</a>
+    <a href="https://github.com/george-montanez">GitHub</a>
+  </div>
+</div>
+</body>
+</html>
