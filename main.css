@@ -106,6 +106,7 @@ body {
       float: left;
       width: 33.33%;
       display: inline-block;
+      margin-bottom:1%;
     }
 
     .amistad-logo {
@@ -176,7 +177,7 @@ body {
     }
 
     .title {
-      margin-top: 10%;
+      margin-top: 5%;
     }
 
     .subtitle {
