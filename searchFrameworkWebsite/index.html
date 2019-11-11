@@ -32,13 +32,17 @@
 <div>
   <h1>The Search Framework</h1>
   <div style="margin: auto;" class="main-page-box">
-    <h3>Overview:</h3>
+    <h3>Overview</h3>
     <p>
       <!-- Using a framework that casts most machine learning problems as search problems, we quantified bias towards a "target" (for example, a model that approximates a "true distribution" of variables). The "bias" quantity we defined basically captures how much more likely an algorithm is to find an acceptable model than picking a model at random. Then, under this framework, we proved that no algorithm can have bias towards any given target set. Additionally, we proved that bias is a conserved quantity for algorithms. Thus, to the degree that an algorithm is more biased towards a particular target, is to the degree that it is biased against other targets. This also serves as a generalization of the "No Free Lunch" Theorems, because we show that no algorithm can be favorably biased towards many distinct targets simultaneously. Thus bias encodes trade-offs: the more bias, the better we can perform for a fixed problem, but the worse we perform on all other problems. -->
       A search problem is represented as a tuple \( (\Omega, T, F) \): <br>
         &bull; \( \Omega \): finite search space<br>
         &bull; \( T \): target subset of elements in search space<br>
         &bull; \( F \): external information resrouce<br><br>
+
+      <span style="font-weight:400;">Note:</span> The external information resource is a purposefully general concept that helps a leanring algorithm make guesses about the search space. <br>
+      In more technical words, it's a binary string that provides initialization information for the search and evaluates points in \( \Omega \), acting as an oracle that guides the search process.
+      For example, this could manifest as training data or loss functions. <br><br>
 
       Given a search problem, a history of elements already examined, and information resource evaluations, an algorithmic search is a process that decides how to query elements of \( \Omega \)
     <div>
@@ -53,6 +57,14 @@
         </div>
       </div>
     </div>
+    <p>
+      As was shown in <a href="http://www.cs.cmu.edu/~gmontane/montanez_dissertation.pdf">Why Machine Learning Works</a>,
+      this framework applies to classification, regression, clustering, optimization, reinforcement learning, and the general machine learning problems considered in Vapnik's <a href="https://www.math.arizona.edu/~hzhang/math574m/Read/vapnik.pdf">learning framework</a>.
+    </p>
+    <h3>Measuring Performance</h3>
+    <p>
+      TODO:
+    </p>
   </div>
   <div class="bottom-nav">
     <a href="index.html">Home</a>
