@@ -24,26 +24,13 @@
 <body>
 <div div style="margin: auto;" class="main-page-box">
   <!-- AMISTAD x NSF x HMC -->
-  <div class="logo-row">
-    <div class="logo-column" style="background-color: yellow; width: 40%; float: left;">
-      <picture>
-        <source media="(max-width: 799px)" srcset="./images/amistad-logo-a.png" class="amistad-logo-a">
-        <source media="(min-width: 800px)" srcset="./images/amistad-logo.png" class="amistad-logo">
-        <img src="./images/amistad-logo-a.png" alt="AMISTAD Logo" class="amistad-logo">
-      </picture>
-      <!-- <h2 class="x1">X</h2> -->
-    </div>
-    <div class="logo-column" style="background-color: green; width: 30%;">
-      <img class="nsf-logo" src="./images/nsf-logo.png" />
-      <!-- <h2 class="x2">X</h2> -->
-    </div>
-    <div class="logo-column" style="width: 30%;">
-      <img class="hmc-logo" src="./images/hmc-logo.png">
-    </div>
+  <div style="text-align: center; margin-top: 5%; margin-bottom: 1%;">
+    <img src="./images/header-logos.png" alt="AMISTAD Logo" class="" style="width: 99.5%;">
   </div>
+
   <h1>The Futility of Bias-Free Learning and Search</h1>
   <h2 class="subtitle">2019</h2>
-  <h3>Overview</h3>
+  <h3>&#127820; Overview &#127820;</h3>
   <p>
     Imagine you are on a routine grocery shopping trip and plan to buy some bananas. You know that the store carries both good and bad bananas which you must search through. There are multiple ways you can go about your search. <br><br>
 
@@ -105,6 +92,7 @@
     $$\mathbb{P}(q(t,F) \geq q_{min}) \leq \frac{p + \text{Bias}(\mathcal{D}, t)}{q_{min}}$$
 
     Using the per-query probability of success from <a href="https://arxiv.org/pdf/1609.08913.pdf">The Famine of Forte</a>, we bound the probability that an algorithm is successful, this time in terms of its bias.
+    This shows that an algorithm cannot perform better than uniform random sampling of the search space if the bias term is 0.
   </p>
   <h4>Conservation of Bias over Distributions</h4>
   <p>
